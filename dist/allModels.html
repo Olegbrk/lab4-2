@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Montserrat:wght@300;400&amp;display=swap" rel="stylesheet">
+  </head>
+  <script src="js/table_data.js"></script>
+  <script src="js/table.js"></script>
+  <div class="grid-nav">
+    <div class="grid-nav-block1"><a href="index.html"><img src="img/logo-caviar.png"/></a></div>
+    <div class="grid-nav-block2"></div>
+    <div class="grid-nav-block3">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="companies.html">Компании</a></li>
+        <li><a href="models.html">Модели</a></li>
+        <li class="active"><a href="allModels.html">Все модели</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="allModelsContent test">
+    <details>
+      <summary>График</summary>
+      <form>
+        <table>
+          <tr>
+            <th>Значение по оси ОХ</th>
+            <th>Результат</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="one" value="first">Компания<br>
+              <input type="radio" name="one" value="second">Название<br>
+              <input type="radio" name="one" value="third">Процессор<br>
+            </td>
+            <td> 
+              <input type="checkbox" name="two">Максимальный экран по ширине<br>
+              <input type="checkbox" name="two">Максимальная камера (МПикс)<br>
+              <input type="checkbox" name="two">Ёмкость батареи<br>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <input type="button" value="Построить">
+    </details>
+    <form name="filter">
+      <details> 
+        <summary>Фильтр</summary>
+        <p>Компания: 
+          <input type="text" name="company">
+        </p>
+        <p>Название:
+          <input type="text" name="name">
+        </p>
+        <p>Процессор:
+          <input type="text" name="processor">
+        </p>
+        <p>Камера: от
+          <input type="text" name="camFrom"> до 
+          <input type="text" name="camTo">
+        </p>
+        <p>Цена: от
+          <input type="text" name="priceFrom"> до 
+          <input type="text" name="priceTo">
+        </p>
+        <button type="button" onclick="clearFilter()">Сбросить фильтры </button>
+      </details>
+    </form>
+    <form name="sort">
+      <details> 
+        <summary>Сортировка</summary>
+        <p>Первый уровень: по убыванию? 
+          <input type="checkbox" name="descFirst">
+          <select name="sortFirst">
+            <option value="-1">Нет</option>
+            <option value="0">Компания</option>
+            <option value="1">Название</option>
+            <option value="2">Процессор</option>
+            <option value="3">Экран</option>
+            <option value="4">Камера</option>
+            <option value="5">Батарея</option>
+            <option value="6">Цена</option>
+          </select>
+        </p>
+        <p>Второй уровень: по убыванию? 
+          <input type="checkbox" name="descSecond">
+          <select name="sortSecond">
+            <option value="-1">Нет</option>
+            <option value="0">Компания</option>
+            <option value="1">Название</option>
+            <option value="2">Процессор</option>
+            <option value="3">Экран</option>
+            <option value="4">Камера</option>
+            <option value="5">Батарея</option>
+            <option value="6">Цена</option>
+          </select>
+        </p>
+        <p>Третий уровень: по убыванию? 
+          <input type="checkbox" name="descThird">
+          <select name="sortThird">
+            <option value="-1">Нет</option>
+            <option value="0">Компания</option>
+            <option value="1">Название</option>
+            <option value="2">Процессор</option>
+            <option value="3">Экран</option>
+            <option value="4">Камера</option>
+            <option value="5">Батарея</option>
+            <option value="6">Цена</option>
+          </select>
+        </p>
+        <button type="button" onclick="clearSort()">Сбросить сортировку</button>
+      </details>
+    </form>
+    <table class="main-table" border="1" cellspacing="0" cellpadding="5" align="center" bordercolor="white">
+      <thead> 
+        <tr>
+          <th>Компания</th>
+          <th>Название</th>
+          <th>Процессор</th>
+          <th>Экран (Д)</th>
+          <th>Камера (МПикс)</th>
+          <th>Батарея (мАч)</th>
+          <th>Цена (руб)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</html>
